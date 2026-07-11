@@ -27,7 +27,7 @@ function setup() {
 //   box.color = 'skyblue';
 
  ellipse(200,300,200,100);
-//  ellipse(100,150,width,height);
+ ellipse(100,150,50,100);
 //  ellipse(x,y,width,height);
 }
 
