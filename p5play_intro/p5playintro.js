@@ -30,12 +30,12 @@ function setup() {
 //  ellipse(200,300,50,100);
 //  ellipse(200,300,50,30);
 
-circle(200,300,300);
-circle(65,150,100);
-circle(335,150,100);
-circle(125,250,40);
-circle(275,250,40);
-ellipse(200,350,125,75);
+// circle(200,300,300);
+// circle(65,150,100);
+// circle(335,150,100);
+// circle(125,250,40);
+// circle(275,250,40);
+// ellipse(200,350,125,75);
 }
 
 // function draw() {
