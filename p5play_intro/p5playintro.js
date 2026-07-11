@@ -48,7 +48,7 @@ function draw() {
 }
 
 box.x = mouseX;
-box.y 
+box.y = mouseY; 
 
 
 }
