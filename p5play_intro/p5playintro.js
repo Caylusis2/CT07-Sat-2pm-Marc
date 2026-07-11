@@ -38,4 +38,16 @@ function draw() {
   textSize(16);
   text("Ball: (" + int(ball.x) + ", " + int(ball.y) + ")", 10, 20);
   text("Mouse: (" + mouseX + ", " + mouseY + ")", 10, 40);
+
+  if (ball.x < 0 + ball.diameter / 2 || ball.x > width - ball.diameter / 2) {
+    ball.vel.x *= -1;
+}
+
+  if (ball.y < 0 + ball.diameter / 2 || ball.y > height - ball.diameter / 2) {
+    ball.vel.y *= -1;
+}
+
+box.x 
+
+
 }
