@@ -44,7 +44,7 @@ function setup() {
 // ellipse(220,395,15,35)
 
 triangle(125,200,200,10,275,200)
-ellipse(200,3,165,300);
+ellipse(200,350,165,300);
 }
 
 // function draw() {
