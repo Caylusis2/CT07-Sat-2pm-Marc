@@ -6,7 +6,7 @@ function setup() {
   // Basic shape testing
   // write your codes here
  ball = new Sprite();
- fill
+ fill()
   // End Basic shape testing
    circle(35,35,60)
    rect(60,60,50,100)
