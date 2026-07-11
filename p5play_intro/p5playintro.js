@@ -17,7 +17,7 @@ function setup() {
   ball.x = 200;
   ball.y = 30;
   ball.diameter = 40;
-  ball.color = 'blue';
+  ball.color = 'red';
 
 }
 
