@@ -24,9 +24,9 @@ function setup() {
   box.y = 100
   box.w = 50;
   box.h = 75;
-  box.color = ('skyblue')
+  box.color = 'skyblue';
 
-  background
+  background(240)
   
 }
 
