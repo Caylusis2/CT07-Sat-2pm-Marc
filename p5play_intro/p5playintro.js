@@ -26,7 +26,7 @@ function setup() {
 //   box.h = 75;
 //   box.color = 'skyblue';
 
- ellipse(x,y,width,height)
+ ellipse(200,300,width,height)
  ellipse(x,y,width,height)
  ellipse(x,y,width,height)
 }
