@@ -35,7 +35,7 @@ circle(65,150,100);
 circle(335,150,100);
 circle(125,250,40);
 circle(275,250,40);
-ellipse(175,275,);
+ellipse(175,325,75,50);
 }
 
 // function draw() {
