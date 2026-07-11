@@ -1,5 +1,5 @@
 let ball;
-
+let box;
 function setup() {
   // Set up the canvas
   new Canvas(400, 600);
