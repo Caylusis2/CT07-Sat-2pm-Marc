@@ -26,7 +26,7 @@ function setup() {
   box.h = 75;
   box.color = ('skyblue')
 
-  fill(0)
+  background
   
 }
 
