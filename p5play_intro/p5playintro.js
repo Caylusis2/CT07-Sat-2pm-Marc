@@ -26,9 +26,11 @@ function setup() {
 //   box.h = 75;
 //   box.color = 'skyblue';
 
- ellipse(200,300,200,100);
- ellipse(200,300,50,100);
- ellipse(200,300,50,30);
+//  ellipse(200,300,200,100);
+//  ellipse(200,300,50,100);
+//  ellipse(200,300,50,30);
+
+
 }
 
 // function draw() {
