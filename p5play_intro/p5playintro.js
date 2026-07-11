@@ -30,13 +30,13 @@ function setup() {
 //  ellipse(200,300,50,100);
 //  ellipse(200,300,50,30);
 
-circle()
-circle()
-circle()
-circle()
-circle()
-circle()
-ellipse()
+circle();
+// circle();
+// circle();
+// circle();
+// circle();
+// circle();
+// ellipse();
 }
 
 // function draw() {
