@@ -32,6 +32,11 @@ function setup() {
 
 circle()
 circle()
+circle()
+circle()
+circle()
+circle()
+
 }
 
 // function draw() {
