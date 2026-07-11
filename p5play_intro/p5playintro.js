@@ -20,9 +20,11 @@ function setup() {
   ball.color = 'red';
 
   box = new Sprite();
-  box.x
+  box.x = 100;
+
   box.y
-  box.w;
+  box.w
+  box.h
   
 }
 
