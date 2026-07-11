@@ -31,7 +31,7 @@ function setup() {
 //  ellipse(200,300,50,30);
 
 circle(200,300,300);
-circle(50,150,100);
+circle(60,150,100);
 // circle();
 // circle();
 // circle();
