@@ -28,7 +28,7 @@ function setup() {
 
  ellipse(200,300,200,100);
  ellipse(200,300,50,100);
- ellipse(200,300,50,height);
+ ellipse(200,300,50,);
 }
 
 // function draw() {
