@@ -43,7 +43,7 @@ function setup() {
 // rect(160,350,75,100);
 // ellipse(220,395,15,35)
 
-triangle(x1,y1,x2,y2,x3,y3)
+// triangle(x1,y1,x2,y2,x3,y3)
 }
 
 // function draw() {
