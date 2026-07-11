@@ -7,7 +7,7 @@ function setup() {
   // write your codes here
  ball = new Sprite();
   // End Basic shape testing
-   circle(50,50,100)
+   circle(50,50,70)
    // Create a bouncing ball sprite
    // write your codes here
 
