@@ -31,6 +31,7 @@ function setup() {
 //  ellipse(200,300,50,30);
 
 circle()
+circle()
 }
 
 // function draw() {
