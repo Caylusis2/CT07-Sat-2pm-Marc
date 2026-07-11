@@ -42,6 +42,8 @@ function setup() {
 // circle(150,325,30);
 // rect(160,350,75,100);
 // ellipse(220,395,15,35)
+
+triangle()
 }
 
 // function draw() {
