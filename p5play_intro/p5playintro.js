@@ -38,7 +38,7 @@ function setup() {
 // ellipse(200,350,125,75);
 
 rect(75,275,250,175);
-circle(25,300,50);
+circle(25,350,30);
 }
 
 // function draw() {
