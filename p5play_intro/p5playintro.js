@@ -40,7 +40,7 @@ function setup() {
 rect(75,275,250,175);
 circle(250,325,30);
 circle(150,325,30);
-rect(50,150)
+rect(50,150,)
 }
 
 // function draw() {
