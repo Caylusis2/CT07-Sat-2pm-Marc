@@ -20,7 +20,7 @@ function setup() {
   ball.color = 'red';
 
   box = new Sprite();
-  
+  box.x
 }
 
 function draw() {
