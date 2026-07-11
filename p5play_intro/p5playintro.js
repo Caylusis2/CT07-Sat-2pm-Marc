@@ -14,7 +14,7 @@ function setup() {
    rect(60,55,100,200)
    // Create a bouncing ball sprite
    // write your codes here
-
+  ball = new Sprite();
 }
 
 function draw() {
