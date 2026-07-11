@@ -36,7 +36,7 @@ circle()
 circle()
 circle()
 circle()
-
+ellipse()
 }
 
 // function draw() {
