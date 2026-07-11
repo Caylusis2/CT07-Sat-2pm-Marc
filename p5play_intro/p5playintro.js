@@ -33,8 +33,8 @@ function setup() {
 circle(200,300,300);
 circle(65,150,100);
 circle(335,150,100);
-circle(125,250,30);
-circle(275,250,30);
+circle(125,250,40);
+circle(275,250,40);
 // circle();
 // ellipse();
 }
