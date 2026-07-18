@@ -55,5 +55,7 @@ function setup() {
   }
 }
 
+function draw(){
+
 }
 
