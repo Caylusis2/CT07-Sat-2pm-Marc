@@ -39,6 +39,7 @@ function setup() {
     console.log(count);
     count -=2;
   }
+  
 
   // --- Exercise: Array operations (groceries) ---
   // write your codes here
