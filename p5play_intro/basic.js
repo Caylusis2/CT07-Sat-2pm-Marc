@@ -34,28 +34,29 @@ function setup() {
 
   // --- Exercise: Display odd numbers backward using while loop ---
   // write your codes here
-  let count = 19;
-  while(count >=1){
-    console.log(count);
-    count -=2;
-  }
+  // let count = 19;
+  // while(count >=1){
+  //   console.log(count);
+  //   count -=2;
+  // }
   
   // --- Exercise: Array operations (groceries) ---
   // write your codes here
-  let groceries = ["apple","bread","milk"];
-  console.log(groceries);
-  groceries.push("orange")
-  groceries.push("butter");
-  groceries.shift();
-  groceries.splice(1,1,"kaya");
-  console.log(groceries);
-  for(let i=0;i<groceries.length;i++){
-    console.log(groceries[i]);
-    text(groceries[i], 50 + i*50,350);
-  }
-}
+  // let groceries = ["apple","bread","milk"];
+  // console.log(groceries);
+  // groceries.push("orange")
+  // groceries.push("butter");
+  // groceries.shift();
+  // groceries.splice(1,1,"kaya");
+  // console.log(groceries);
+  // for(let i=0;i<groceries.length;i++){
+  //   console.log(groceries[i]);
+  //   text(groceries[i], 50 + i*50,350);
+  // }
+// }
 
 function draw(){
 
 }
 
+}
