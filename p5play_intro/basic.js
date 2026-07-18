@@ -44,6 +44,6 @@ function setup() {
   // write your codes here
   let groceries = ["apple","bread","milk"];
   console.log(groceries);
-  
+  grocerires.push
 }
 
