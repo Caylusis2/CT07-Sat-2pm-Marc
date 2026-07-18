@@ -34,7 +34,7 @@ function setup() {
 
   // --- Exercise: Display odd numbers backward using while loop ---
   // write your codes here
-
+  let 
   // --- Exercise: Array operations (groceries) ---
   // write your codes here
 }
