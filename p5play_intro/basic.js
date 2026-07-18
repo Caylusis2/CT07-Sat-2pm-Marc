@@ -44,9 +44,9 @@ function setup() {
   // write your codes here
   let groceries = ["apple","bread","milk"];
   console.log(groceries);
-  grocerires.push("orange")
-  grocerires.push("butter");
-  grocerires.shift();
+  groceries.push("orange")
+  groceries.push("butter");
+  groceries.shift();
   groceries.splice(1,1,"kaya");
   console.log(groceries)
 
