@@ -34,7 +34,12 @@ function setup() {
 
   // --- Exercise: Display odd numbers backward using while loop ---
   // write your codes here
-  let 
+  let count = 19;
+  while(count >=1){
+    console.log(count);
+    count -=2;
+  }
+
   // --- Exercise: Array operations (groceries) ---
   // write your codes here
 }
