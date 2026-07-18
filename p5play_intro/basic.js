@@ -3,7 +3,6 @@ function setup() {
 new Canvas (800,400);
 background(220);
 textsize(16);
-
   // --- Exercise: Area of Triangle ---
   // write your codes here
 
