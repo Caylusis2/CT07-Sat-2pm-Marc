@@ -53,7 +53,7 @@ function setup() {
     console.log(groceries[i]);
     text(groceries[i], 50 + i*50,350);
   }
-  
+}
 
 }
 
