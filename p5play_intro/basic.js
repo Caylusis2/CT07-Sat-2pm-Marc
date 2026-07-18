@@ -11,7 +11,6 @@ function setup() {
 
   // --- Exercise: Sum of first 10 even numbers ---
   // write your codes here
-  // for i in range(5);
   // for(let i=0; i<5 ;i++){ }
   // let sum =0;
   // for(let i=0;i<=20;++i){
@@ -19,9 +18,15 @@ function setup() {
   //     sum += i;
   //   }
   // }
+  // console.log("Sum of first ten even numbers",sum);
+  // text("Sum of first ten numbers is: "+sum,300,225);
+
   // --- Exercise: Age category classification ---
   // write your codes here
-
+  let age = 10;
+  if(age<=9){
+  console.log("Lower Primary");
+  }else if(age <= 12)
   // --- Exercise: Display odd numbers backward using while loop ---
   // write your codes here
 
