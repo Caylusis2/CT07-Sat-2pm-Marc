@@ -40,8 +40,8 @@ function setup() {
     count -=2;
   }
   
-
   // --- Exercise: Array operations (groceries) ---
   // write your codes here
+  
 }
 
