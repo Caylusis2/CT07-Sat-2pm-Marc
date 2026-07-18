@@ -5,7 +5,7 @@ background(220);
 textsize(16);
   // --- Exercise: Area of Triangle ---
   // write your codes here
-area = 0.5 * base * innerHeight
+area = 0.5 * base * he
   // --- Exercise: Sum of first 10 even numbers ---
   // write your codes here
 
