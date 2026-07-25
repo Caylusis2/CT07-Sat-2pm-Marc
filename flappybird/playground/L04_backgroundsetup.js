@@ -20,4 +20,5 @@ function setup(){
 }
 
 function draw(){
+    Image(bg,0,0)
 }
