@@ -5,7 +5,7 @@ let midflaping, bg, base;
 function preload(){
     midflaping = loadImage('redbird-midflap.png');
     bg = loadImage('background-night.png');
-    base  = loadImage('base.png');
+    base  = loadImage('assets/base.png');
 }
 
 function setup(){
