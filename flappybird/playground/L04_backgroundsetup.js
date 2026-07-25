@@ -21,7 +21,7 @@ function setup(){
     bird.mass = 2;
     bird.drag = 0.02;
     bird.bounciness = 0.05;
-    AudioWorkletNode.gravity
+    world.gravity.y = 10;
 }
 
 function draw(){
