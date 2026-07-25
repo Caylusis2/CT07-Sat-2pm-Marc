@@ -3,8 +3,8 @@ let bird, floor;
 let midflaping, bg, base;
 
 function preload(){
-    midflaping = loadImage('redbird-midflap.png');
-    bg = loadImage('background-night.png');
+    midflaping = loadImage('assets/redbird-midflap.png');
+    bg = loadImage('assets/background-night.png');
     base  = loadImage('assets/base.png');
 }
 
