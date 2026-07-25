@@ -13,7 +13,8 @@ function setup(){
     background(225);
     bird = new Sprite();
     bird.x = 200;
-    bird.y
+    bird.y = 300;
+    bird.width = 20;
 }
 
 function draw(){
