@@ -12,7 +12,8 @@ function setup(){
     createCanvas(400,600);
     background(225);
     bird = new Sprite();
-    
+    bird.x = 200;
+    bird.y
 }
 
 function draw(){
