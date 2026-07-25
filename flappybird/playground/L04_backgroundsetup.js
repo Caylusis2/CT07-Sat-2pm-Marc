@@ -7,3 +7,4 @@ function preload(){
     bg = loadImage('background-night.png');
     base  = loadImage('base.png');
 }
+
