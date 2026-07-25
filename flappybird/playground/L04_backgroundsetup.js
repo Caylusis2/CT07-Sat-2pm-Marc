@@ -17,7 +17,8 @@ function setup(){
     bird.width = 20;
     bird.height = 20;
     bird.img = midflaping;
-    bird.collider = 'dynamic'
+    bird.collider = 'dynamic';
+    
 }
 
 function draw(){
