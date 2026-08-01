@@ -72,7 +72,8 @@ function draw(){
         spawnPipePair();
 
     bird.x += 3;
-    camera
+    CanvasCaptureMediaStreamTrack.x = bird.x;
+    
     }
 }
 
