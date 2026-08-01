@@ -2,7 +2,7 @@ let bird, floor;
 let pipeGroup;
 
 let midflaping, bg, base;
-let flapUpImg,flapDownImg
+let flapUpImg,flapDownImg;
 let pipe;
 let toppipe,bottomPipe;
 
