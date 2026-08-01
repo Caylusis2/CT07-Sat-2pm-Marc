@@ -1,4 +1,5 @@
 let bird, floor;
+let pipegroup;
 
 let midflaping, bg, base;
 let flapUpImg,flapDownImg
