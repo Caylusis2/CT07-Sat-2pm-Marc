@@ -54,6 +54,7 @@ function draw(){
     else {
         bird.img = flapMidImg;
         bird.rotation = 0;
+    }
     
     fill("blue");
     textSize(14);
