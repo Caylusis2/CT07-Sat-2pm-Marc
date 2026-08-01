@@ -36,7 +36,7 @@ function setup(){
 function draw(){
     image(bg,0,0,width , height);
 
-    if (KeyboardEvent.presses('space')){
+    if (KeyboarkbdEvent.presses('space')){
         bird.vel.y = -45;
         bird.sleeping = false;
     }
