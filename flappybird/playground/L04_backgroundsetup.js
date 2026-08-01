@@ -43,7 +43,10 @@ function draw(){
         bird.vel.y = -5;
         bird.sleeping = false;
 
-    if (bird.vel.y < -1){}
+    if (bird.vel.y < -1){
+        bird.img = flapUpImg;
+        bird.rotation = -30;
+    }
     
     fill("blue");
     textSize(14);
