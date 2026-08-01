@@ -1,7 +1,7 @@
 let bird, floor;
 
 let midflaping, bg, base;
-let flapUp
+let flapUpImg,flapDownImg
 
 function preload(){
     midflaping = loadImage('assets/redbird-midflap.png');
