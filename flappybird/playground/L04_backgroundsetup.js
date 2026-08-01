@@ -10,7 +10,7 @@ function preload(){
     midflaping = loadImage('assets/redbird-midflap.png');
     bg = loadImage('assets/background-night.png');
     base  = loadImage('assets/base.png');
-    flapupImg = loadImage('assets/yellowbird-upflap.png');
+    flapUpImg = loadImage('assets/yellowbird-upflap.png');
     flapDownImg = loadImage('assets/yellowbird-downflap.png')
     pipe = loadImage('assets/pipe-green.png');
 }
@@ -50,11 +50,11 @@ function draw(){
         bird.sleeping = false;
 
     if (bird.vel.y < -1){
-        bird.img = flapupImg;
+        bird.img = flapUpImg;
         bird.rotation = -30;
     }
     else if (bird.vel.y > 1) {
-        bird.img = flapdownImg;
+        bird.img = flapDownImg;
         bird.rotation = 30;
     }
     else {
