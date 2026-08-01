@@ -70,6 +70,8 @@ function draw(){
 
     if (frameCount === 1){
         spawnPipePair();
+
+    bird
     }
 }
 
