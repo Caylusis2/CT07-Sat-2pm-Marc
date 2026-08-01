@@ -42,7 +42,8 @@ function draw(){
     if (kb.presses('space') || mouse.presses())
         bird.vel.y = -5;
         bird.sleeping = false;
-        
+
+    if (bird.vel.y < -1){}
     
     fill("blue");
     textSize(14);
