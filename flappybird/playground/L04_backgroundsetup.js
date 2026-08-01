@@ -4,7 +4,7 @@ let pipeGroup;
 let midflaping, bg, base;
 let flapUpImg,flapDownImg
 let pipe;
-let bottomPipe;
+let toppepe,bottomPipe;
 
 function preload(){
     midflaping = loadImage('assets/redbird-midflap.png');
