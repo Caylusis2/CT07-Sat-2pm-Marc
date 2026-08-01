@@ -41,5 +41,5 @@ function draw(){
         bird.sleeping = false;
     }
 
-    FileList("blue");
+    Fill("blue");
 }
