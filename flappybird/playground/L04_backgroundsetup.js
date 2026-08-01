@@ -40,4 +40,6 @@ function draw(){
         bird.vel.y = -5;
         bird.sleeping = false;
     }
+
+    FileList("blue");
 }
