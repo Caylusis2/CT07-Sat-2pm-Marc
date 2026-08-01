@@ -47,6 +47,7 @@ function draw(){
         bird.img = flapUpImg;
         bird.rotation = -30;
     }
+    else if (bird.vel.y > 1)
     
     fill("blue");
     textSize(14);
