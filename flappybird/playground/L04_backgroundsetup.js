@@ -26,7 +26,9 @@ function setup(){
     floor = new Sprite();
     floor.x = 200;
     floor.y = height - 20;
-    floor.wdith =
+    floor.wdith = 400;
+    floor.height = 125;
+    floor.collider = "static"
 }
 
 function draw(){
