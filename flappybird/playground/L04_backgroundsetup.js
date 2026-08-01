@@ -1,5 +1,5 @@
 let bird, floor;
-let pipegroup;
+let pipeGroup;
 
 let midflaping, bg, base;
 let flapUpImg,flapDownImg
@@ -68,4 +68,8 @@ function draw(){
     if (frameCount === 1){
         spawnPipePair();
     }
+}
+
+function spawnPipePair(){
+
 }
