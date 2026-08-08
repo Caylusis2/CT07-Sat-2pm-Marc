@@ -2,7 +2,7 @@ let bird, floor;
 let pipeGroup;
 let score = 0;
 let numberImages = [];
-let scoreDigits
+let scoreDigits;
 
 let midflaping, bg, base;
 let flapUpImg,flapDownImg;
@@ -16,6 +16,9 @@ function preload(){
     flapUpImg = loadImage('assets/yellowbird-upflap.png');
     flapDownImg = loadImage('assets/yellowbird-downflap.png')
     pipe = loadImage('assets/pipe-green.png');
+    for (let i = 0; i < 10; i++){
+        numberImages[i] = loadImage('assets/' + i +'.png');
+    }
 }
 
 function setup(){
