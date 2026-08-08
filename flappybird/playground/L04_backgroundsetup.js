@@ -4,7 +4,7 @@ let score = 0;
 let numberImages = [];
 let scoreDigits;
 let gameoverImg;
-let gameover
+let gameoverLabel;
 
 let midflaping, bg, base;
 let flapUpImg,flapDownImg;
