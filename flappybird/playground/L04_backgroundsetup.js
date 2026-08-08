@@ -106,7 +106,13 @@ function spawnPipePair(){
     pipeGroup.add(topPipe);
 }
 
-function drawScore(x, y, score, digitWidth, digitHeight)
+function drawScore(x, y, score, digitWidth, digitHeight){
+    scoreDigits.removalAll();
+    let scoreStr = str(score);
+    let totalWidth = scoreStr.length * digitWidth;
+    let startX = x - totalWdith / 2;
+
+}
 {
 
 }
