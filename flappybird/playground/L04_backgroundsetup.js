@@ -113,7 +113,7 @@ function draw(){
         noLoop();
     }
 
-    if (bird.collides(pipeGroup))
+    if (bird.collides(pipeGroup) || bird.collides(floore))
 
 function spawnPipePair(){
     let gap = 50;
