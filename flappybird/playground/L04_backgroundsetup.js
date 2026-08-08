@@ -36,7 +36,8 @@ function setup(){
     bird.bounciness = 0.5;
     world.gravity.y = 10;
     pipeGroup = new Group();
-    scoreDigits = new Group
+    scoreDigits = new Group();
+    scoreDigits.
 
 
     floor = new Sprite();
