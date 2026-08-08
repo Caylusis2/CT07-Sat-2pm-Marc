@@ -96,7 +96,7 @@ function draw(){
             pipe.passed = true;
             score++;
         }
-    }   
+    }
 
 }
 
