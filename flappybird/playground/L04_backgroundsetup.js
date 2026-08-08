@@ -113,6 +113,5 @@ function drawScore(x, y, score, digitWidth, digitHeight){
     let startX = x - totalWdith / 2;
 
 }
-{
 
-}
+
