@@ -110,11 +110,16 @@ function draw(){
     }
 
     if (bird.collides(pipeGroup) || bird.collides(floor) || bird.y < -30){
+
+    if (bird.collides(pipeGroup) || bird.collides(floor)){ 
+        gameoverLabel = new Sprite(width/2, height/2, 192, 42);
+        gameoverLabel.img = gameoverImg;
+        gameoverLabel.layer = 100;
+        gameoverLabel.x = camera.x;
+
         noLoop();
     }
-
-    if (bird.collides(pipeGroup) || bird.collides(floore))
-
+    }
 function spawnPipePair(){
     let gap = 50;
     let midY = random(250, height - 250);
