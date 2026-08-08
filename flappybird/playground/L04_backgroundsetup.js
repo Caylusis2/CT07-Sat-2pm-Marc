@@ -85,6 +85,8 @@ function draw(){
     camera.x = bird.x;
     floor.x = bird.x;
     }
+
+    drawS
 }
 
 function spawnPipePair(){
