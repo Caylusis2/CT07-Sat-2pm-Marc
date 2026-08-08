@@ -86,7 +86,7 @@ function draw(){
     floor.x = bird.x;
     }
 
-    drawS
+    drawScore(width/2, )
 }
 
 function spawnPipePair(){
