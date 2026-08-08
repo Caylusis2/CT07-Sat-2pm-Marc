@@ -106,8 +106,7 @@ function draw(){
         }
     }
 
-    if (bird.collides(pipe))
-
+    if (bird.collides(pipeGroup))
 function spawnPipePair(){
     let gap = 50;
     let midY = random(250, height - 250);
