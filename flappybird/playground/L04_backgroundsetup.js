@@ -106,7 +106,7 @@ function draw(){
         }
     }
 
-    if ()
+    if (bird.collides(pipe))
 
 function spawnPipePair(){
     let gap = 50;
