@@ -106,7 +106,7 @@ function spawnPipePair(){
     pipeGroup.add(topPipe);
 }
 
-function drawScore()
+function drawScore(x, y, score, digit)
 {
 
 }
