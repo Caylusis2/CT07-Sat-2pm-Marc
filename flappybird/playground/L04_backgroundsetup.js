@@ -38,7 +38,8 @@ function setup(){
     pipeGroup = new Group();
     scoreDigits = new Group();
     scoreDigits.collider = 'none';
-    scoreDigits
+    scoreDigits.layer = 1000;
+
 
 
     floor = new Sprite();
