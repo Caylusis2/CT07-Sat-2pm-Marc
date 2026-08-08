@@ -88,6 +88,8 @@ function draw(){
 
     drawScore(width/2, 20, score, 24, 36)
 
+    if (frameCount )
+
     for (let pipe of pipeGroup) {
         if (pipe.x < -50){
             pipe.remove();
