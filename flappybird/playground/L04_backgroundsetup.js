@@ -92,6 +92,7 @@ function draw(){
         if (pipe.x < -50){
             pipe.remove();
         }
+    }
         let pipeRightEdge = pipe.x + pipe.w / 2;
         let birdLeftEdge = bird.x - bird.w / 2;
 
@@ -100,8 +101,6 @@ function draw(){
             score++;
         }
     }
-
-}
 
 function spawnPipePair(){
     let gap = 50;
