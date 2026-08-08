@@ -88,7 +88,9 @@ function draw(){
 
     drawScore(width/2, 20, score, 24, 36)
 
-    if (frameCount )
+    if (frameCount % 90 === 0){
+        spawnPipePair();
+    }
 
     for (let pipe of pipeGroup) {
         if (pipe.x < -50){
