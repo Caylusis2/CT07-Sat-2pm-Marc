@@ -89,6 +89,7 @@ function draw(){
     drawScore(width/2, 20, score, 24, 36)
 
     for (let pipe of pipeGroup) {
+        if (let)
         let pipeRightEdge = pipe.x + pipe.w / 2;
         let birdLeftEdge = bird.x - bird.w / 2;
 
