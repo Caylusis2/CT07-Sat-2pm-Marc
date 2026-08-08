@@ -3,7 +3,8 @@ let pipeGroup;
 let score = 0;
 let numberImages = [];
 let scoreDigits;
-let gameoverImgl
+let gameoverImg;
+let gameover
 
 let midflaping, bg, base;
 let flapUpImg,flapDownImg;
