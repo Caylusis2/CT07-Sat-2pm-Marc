@@ -12,7 +12,7 @@ let pipe;
 let toppipe,bottomPipe;
 
 function preload(){
-    game
+    gameover
     midflaping = loadImage('assets/redbird-midflap.png');
     bg = loadImage('assets/background-night.png');
     base  = loadImage('assets/base.png');
