@@ -37,7 +37,8 @@ function setup(){
     world.gravity.y = 10;
     pipeGroup = new Group();
     scoreDigits = new Group();
-    scoreDigits.
+    scoreDigits.collider = 'none';
+    scoreDigits
 
 
     floor = new Sprite();
