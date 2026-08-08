@@ -1,5 +1,7 @@
 let bird, floor;
 let pipeGroup;
+let score = 0;
+
 
 let midflaping, bg, base;
 let flapUpImg,flapDownImg;
