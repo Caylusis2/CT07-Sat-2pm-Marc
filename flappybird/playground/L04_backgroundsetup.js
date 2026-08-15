@@ -69,7 +69,8 @@ function draw(){
         startScreenLabel.visible = false;
     }
 
-    if (kb.presses('space') || mouse.presses())
+    if(startGame){
+         if (kb.presses('space') || mouse.presses())
         bird.vel.y = -5;
         bird.sleeping = false;
 
@@ -129,6 +130,7 @@ function draw(){
         gameoverLabel.x = camera.x;
 
         noLoop();
+    }
     }
     }
 function spawnPipePair(){
