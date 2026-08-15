@@ -27,6 +27,7 @@ function preload(){
         numberImages[i] = loadImage('assets/' + i +'.png');
     }
     startScreenImg = loadImage('assets/message.png');
+    flapSound 
 }
 
 function setup(){
