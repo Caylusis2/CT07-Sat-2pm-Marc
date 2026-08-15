@@ -27,7 +27,8 @@ function preload(){
         numberImages[i] = loadImage('assets/' + i +'.png');
     }
     startScreenImg = loadImage('assets/message.png');
-    flapSound = createAudio('assets/sfx_wing')
+    flapSound = createAudio('assets/sfx_wing.mp3');
+    pointSound
 }
 
 function setup(){
