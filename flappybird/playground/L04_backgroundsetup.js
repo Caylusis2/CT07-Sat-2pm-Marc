@@ -98,11 +98,11 @@ function draw(){
 
     if (frameCount === 1){
         spawnPipePair();
-
+    }
     bird.x += 3;
     camera.x = bird.x;
     floor.x = bird.x;
-    }
+    
 
     drawScore(width/2, 20, score, 24, 36);
 
