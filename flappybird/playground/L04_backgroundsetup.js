@@ -55,7 +55,7 @@ function setup(){
     floor.height = 125;
     floor.collider = 'static';
     floor.img = base;
-    startScreenLabel = new Sprite(width/2, height)
+    startScreenLabel = new Sprite(width/2, height/2, 50, 50)
 
 }
 
