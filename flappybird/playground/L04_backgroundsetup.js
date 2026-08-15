@@ -24,7 +24,7 @@ function preload(){
     for (let i = 0; i < 10; i++){
         numberImages[i] = loadImage('assets/' + i +'.png');
     }
-    startScreenImg = loadImage('assets')
+    startScreenImg = loadImage('assets/message.png');
 }
 
 function setup(){
