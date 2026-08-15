@@ -64,7 +64,10 @@ function setup(){
 function draw(){
     image(bg,0,0,width , height);
 
-    if (kb.presses('space') )
+    if (kb.presses('space') || mouse.presses()){
+        startGame = true;
+        startsScreenLabel.visible = false;
+    }
 
     if (kb.presses('space') || mouse.presses())
         bird.vel.y = -5;
