@@ -10,6 +10,7 @@ let midflaping, bg, base;
 let flapUpImg,flapDownImg;
 let pipe;
 let toppipe,bottomPipe;
+let
 
 function preload(){
     gameoverImg = loadImage('assets/gameover.png');
