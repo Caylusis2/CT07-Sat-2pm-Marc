@@ -140,7 +140,7 @@ function draw(){
 
         noLoop();
 
-        
+    setTimeout
     }
     
     }}
