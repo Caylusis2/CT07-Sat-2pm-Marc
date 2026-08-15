@@ -11,7 +11,7 @@ let flapUpImg,flapDownImg;
 let pipe;
 let toppipe,bottomPipe;
 let startScreenLabel;
-let start
+let startScreenImg;
 
 function preload(){
     gameoverImg = loadImage('assets/gameover.png');
