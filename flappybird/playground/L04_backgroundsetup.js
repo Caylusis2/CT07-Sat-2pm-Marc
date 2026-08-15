@@ -96,7 +96,7 @@ function draw(){
     text('isMoving: ' + bird.isMoving, 10, 40);
     text('sleeping: ' + bird.sleeping , 10, 60);
 
-    if (frameCount === 0){
+    if (frameCount === 1){
         spawnPipePair();
 
     bird.x += 3;
@@ -104,7 +104,7 @@ function draw(){
     floor.x = bird.x;
     }
 
-    drawScore(width/2, 20, score, 24, 36)
+    drawScore(width/2, 20, score, 24, 36);
 
     if (frameCount % 90 === 0){
         spawnPipePair();
@@ -114,7 +114,7 @@ function draw(){
         if (pipe.x < -50){
             pipe.remove();
         }
-    }
+    
         let pipeRightEdge = pipe.x + pipe.w / 2;
         let birdLeftEdge = bird.x - bird.w / 2;
 
@@ -124,7 +124,7 @@ function draw(){
         }
     }
 
-    if (bird.collides(pipeGroup) || bird.collides(floor) || bird.y < -30){
+    
 
     if (bird.collides(pipeGroup) || bird.collides(floor)){ 
         gameoverLabel = new Sprite(width/2, height/2, 192, 42);
@@ -134,8 +134,8 @@ function draw(){
 
         noLoop();
     }
-    }
-    }
+    
+    }}
 function spawnPipePair(){
     let gap = 50;
     let midY = random(250, height - 250);
