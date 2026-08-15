@@ -56,7 +56,7 @@ function setup(){
     floor.collider = 'static';
     floor.img = base;
     startScreenLabel = new Sprite(width/2, height/2, 50, 50, 'none');
-    startScreen
+    startScreenLabel.img = startScreenImg;
 
 }
 
