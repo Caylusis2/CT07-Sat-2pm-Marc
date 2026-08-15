@@ -140,7 +140,24 @@ function draw(){
 
         noLoop();
 
-    setTimeout
+    setTimeout(() => {
+        score = 0;
+        startGame = false;
+
+        pipes.removeAll();
+        bird.vel.x = 0;
+        bird.vel.y = 0;
+        bird.rotation = 0;
+        bird.collider = 'static';
+        bird.y = 200;
+
+        gameOverLabel.remove();
+        startMessageLabel.visible = true;
+        startMessageLabel.x = bird.x;
+        startMessageLabel.y = height / 2 - 50;
+
+        loop();
+    }, 3000);
     }
     
     }}
