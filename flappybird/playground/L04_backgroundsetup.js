@@ -55,7 +55,7 @@ function setup(){
     floor.height = 125;
     floor.collider = 'static';
     floor.img = base;
-    startScreen
+    startScreenLabel = new
 
 }
 
