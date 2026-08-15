@@ -13,7 +13,7 @@ let toppipe,bottomPipe;
 let startScreenLabel;
 let startScreenImg;
 let startGame = false;
-let flapSound
+let flapSound, pointSound, failSound
 
 function preload(){
     gameoverImg = loadImage('assets/gameover.png');
