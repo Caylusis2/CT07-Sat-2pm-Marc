@@ -10,7 +10,8 @@ let midflaping, bg, base;
 let flapUpImg,flapDownImg;
 let pipe;
 let toppipe,bottomPipe;
-let
+let startScreenLabel;
+let start
 
 function preload(){
     gameoverImg = loadImage('assets/gameover.png');
