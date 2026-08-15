@@ -68,7 +68,7 @@ function draw(){
     if (kb.presses('space') || mouse.presses()){
         startGame = true;
         bird.visible = true;
-        bird.collider = ''
+        bird.collider = 'dynamic';
         startScreenLabel.visible = false;
     }
 
