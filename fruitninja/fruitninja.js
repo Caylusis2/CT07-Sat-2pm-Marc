@@ -5,7 +5,7 @@ let fruitHalves;
 
 function preload(){
     dojoBG =loadImage('assets/dojobackground.png');
-}
+
 let peach = {
     whole: loadImage('assets/peachwhole.png'),
     half1: loadImage('assets/peachhalf.png'),
@@ -17,7 +17,8 @@ let watermelon = {
     half1: loadImage('assets/watermelonhalf.png'),
     half2: loadImage('assets/watermelonhalf.png'),
 }
-
+fruitTypes = [peach,watermelon];
+}
 function setup(){
     new Canvas(800,600);
     world.gravity.y = 10;
@@ -36,7 +37,6 @@ function draw(){
         trail.collider = 'none';
         trail.color = "red";
         trail.life = 10;
-
         sliceFruit();
     }
 }
