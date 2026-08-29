@@ -62,9 +62,12 @@ function sliceFruit() {
         if (d < ((fruit.d / 2) + 5)) {
             fruit.sliced = true;
 
-            const fx = fruit.x
+            const fx = fruit.x;
+            const fy = fruit.y;
 
             fruit.remove();
+
+            d
 
             break;
         }
