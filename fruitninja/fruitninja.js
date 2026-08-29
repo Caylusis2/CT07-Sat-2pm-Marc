@@ -12,7 +12,8 @@ let peach = {
 };
 
 let watermelon = {
-    whole: loadImage('assets/watermelonwhole.png')
+    whole: loadImage('assets/watermelonwhole.png'),
+    
 }
 
 function setup(){
