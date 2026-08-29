@@ -6,7 +6,9 @@ function preload(){
     dojoBG =loadImage('assets/dojobackground.png');
 }
 let peach = {
-    whole: loadImage('assets/peachwhole.png')
+    whole: loadImage('assets/peachwhole.png'),
+    half1: loadImage(assets/peachhalf.png),
+    half2: loadImage(assets/peachhalf.png),
 };
 
 let watermelon = {
