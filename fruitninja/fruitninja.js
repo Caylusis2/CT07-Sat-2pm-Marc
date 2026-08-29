@@ -21,7 +21,7 @@ let watermelon = {
 function setup(){
     new Canvas(800,600);
     world.gravity.y = 10;
-    fruitHalves = new fruitGroup();
+    fruitHalves = new Group();
 }
 
 function draw(){
