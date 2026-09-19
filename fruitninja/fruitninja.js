@@ -47,10 +47,10 @@ function spawnFruit(){
     let fruitData = random(fruitTypes);
     let randomX = random(300, 500);
     let fruit = new fruitGroup.Sprite(randomX, height+20, 40);
-    fruit.image = fruitData.whole;
-    fruit.type = fruitData;
-    fruit.vel.y = random(-10, -14);
-    fruit.vel.x = random(-2, 2);
+    fruit.image = fruitData.whole; 
+    fruit.type = fruitData; 
+    fruit.vel.y = random(-10, -14); 
+    fruit.vel.x = random(-2, 2); 
     fruit.friction = 0;
 }
 
