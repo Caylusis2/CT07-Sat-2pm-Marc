@@ -2,6 +2,7 @@ let dojoBG;
 let fruitGroup;
 let fruitTypes = [];
 let fruitHalves;
+let bombarray =[];
 
 function preload(){
     dojoBG =loadImage('assets/dojobackground.png');
@@ -18,7 +19,11 @@ function preload(){
         half2: loadImage('assets/watermelonhalf.png'),
     }
     
+    let bomb = {
+        whole: loadImage('assets/fruitbomb.png');
+    }
     fruitTypes = [peach,watermelon];
+    bombarray = [bomb];
 }
 
 function setup(){
@@ -34,12 +39,35 @@ function draw(){
     if (frameCount % 120 === 0){
         spawnFruit();
     }
+    if(frameCount %300===0) {
+        spawnBomb();
+    }
     if (mouse.pressing()){
         trail = new Sprite(mouse.x, mouse.y, 7);
         trail.collider = 'none';
         trail.color = "red";
         trail.life = 10;
         sliceFruit();
+        sliceBomb();
+    }
+    if(exploded){
+        drawExplosion(explosionX,explosionY);
+        explosionTimer+= 3; //alternatively explosionTimer++
+        if(explosionTimer >30){
+            fruitGroup.removeAll();
+            fruitHalves.removeAll();
+            bombGroup.removeAll();
+            noStroke();
+            fill(0,0,0,180);
+            rect(0,0,width,height);
+
+            fill("red");
+            textSize(70);
+            textAlign(CENTER,CENTER);
+            text("YOU HIT BOMB",width/2,height/2);
+            text("GAMEOVER",width/2,height/2+70);
+            noLoop();
+        }
     }
 }
 
@@ -53,7 +81,16 @@ function spawnFruit(){
     fruit.vel.x = random(-2, 2); 
     fruit.friction = 0;
 }
-
+function spawnBomb(){
+    let bombData = random(bombarray);
+    let randomX = random(300,500);
+    let bomb = new Sprite(randomX, height+20, 80);
+    bomb.image = bombData.whole;
+    bomb.type = bombData;
+    bomb.vel.y = random(-10, -14);
+    bomb.vel.x = random(-2, 2);
+    bomb.friction = 0;
+}
 function sliceFruit() {
     for (let fruit of fruitGroup) {
         if (fruit.sliced){
@@ -70,7 +107,25 @@ function sliceFruit() {
         }
     }
 }
-
+function sliceBomb(){
+    for(let bombs of bombGroup){
+        if(bombs.sliced){
+            continue;
+        }
+        //collision check 
+        let bombD = dist(mouse.x,mouse.y,bombs.x,bombs.y);
+        if(bombD < (bombs.d/2)+5){
+            bombs.sliced = true;
+            explosionX = bombs.x;
+            explosionY = bombs.y;
+            //to do some animation
+            bombs.remove();
+            explosionTimer = 0;
+            exploded = true;
+            break;
+        }
+    }
+}
 function splitFruit(x, y, fruitData) {  
     let left = new fruitHalves.Sprite(x - 10, y, 40, 40);
     left.img = fruitData.half1;
@@ -85,4 +140,15 @@ function splitFruit(x, y, fruitData) {
     right.vel.y = random(-5, -2);
     right.rotationSpeed = 5;
     right.life = 30;
+}
+
+function drawExplosion(x,y){
+    noStroke();
+    fill(255,0,0);
+    circle(x,y,explosionTimer*12);
+    fill(255,150,0);
+    circle(x,y,explosionTimer*8);
+    fill(255,255,0);
+    circle(x,y,explosionTimer*4);
+    
 }
