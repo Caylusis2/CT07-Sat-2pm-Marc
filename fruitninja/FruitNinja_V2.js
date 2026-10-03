@@ -101,8 +101,9 @@ function draw(){
 
   // call spawnFruit function 
   if (frameCount % 120 === 0){
-    for(let i = 0; i<difficultyNumFruits; i++)
-    spawnFruit();
+      for(let i = 0; i<difficultyNumFruits; i++){
+        spawnFruit();
+      }
   }
 
     // Handle slicing when mouse is pressed
