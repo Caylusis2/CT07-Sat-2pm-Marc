@@ -16,7 +16,7 @@ let sliceSound;
 let backgroundTrack;
 
 let difficultyNumFruits = 1;
-let 
+let lastDifficulty
 
 
 function preload(){
