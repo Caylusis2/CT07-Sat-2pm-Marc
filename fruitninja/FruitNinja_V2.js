@@ -13,6 +13,7 @@ let gameTimer = 0; // seconds elapsed
 let gameDuration = 60; // length of one game
 
 let sliceSound;
+let backgroundTrack;
 
 
 function preload(){
