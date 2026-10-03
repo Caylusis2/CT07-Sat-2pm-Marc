@@ -13,7 +13,7 @@ let gameTimer = 0; // seconds elapsed
 let gameDuration = 60; // length of one game
 
 
-let gameState = 'start'; // 'start', 'play', 'gameover' - controls game screen
+
 
 function preload(){
   dojoBG =loadImage('assets/dojobackground.png');
