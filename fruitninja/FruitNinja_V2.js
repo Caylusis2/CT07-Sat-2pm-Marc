@@ -61,8 +61,8 @@ function draw(){
     gameStartTime = millis(); // capture time started
     gameTimer = 0;  // timer counter
   }
-    if(!backgroundTrack.isPlaying()){
-      backgroundTrack.loop();
+  if(!backgroundTrack.isPlaying()){
+    backgroundTrack.loop();
     }
 
   // Start screen
