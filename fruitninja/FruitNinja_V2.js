@@ -106,7 +106,10 @@ function draw(){
       }
   }
 
-  if (gameTimer - lastDifficultyIncrease)
+  if (gameTimer - lastDifficultyIncrease >= 15){
+    difficultyNumFruits +=1;
+    lastDifficultyIncrease= gameTimer;
+  }
 
     // Handle slicing when mouse is pressed
   if (mouse.pressing()){
