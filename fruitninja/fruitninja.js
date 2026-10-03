@@ -26,7 +26,7 @@ function preload(){
     }
     
     let bomb = {
-        whole: loadImage('assets/fruitbomb.png');
+        whole: loadImage('assets/fruitbomb.png')
     }
     fruitTypes = [peach,watermelon];
     bombarray = [bomb];
