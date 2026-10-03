@@ -3,6 +3,12 @@ let fruitGroup;
 let fruitTypes = [];
 let fruitHalves;
 let bombarray =[];
+let score = 0;
+let missedFruits = 0;
+let gameState = 'start';
+let gameStartTime = 0;
+let gameTimer = 0;
+let gameDuration = 60;
 
 function preload(){
     dojoBG =loadImage('assets/dojobackground.png');
@@ -36,8 +42,31 @@ function setup(){
 function draw(){
     clear();
     image(dojoBG, 0, 0, width, height);
+
+    if(gameState === 'start') {
+        fill(0, 180);
+        rect(0, 0, width, height);
+        fill(255);
+        textAlign(CENTER, CENTER);
+        textSize = 48;
+        text('Fruit Ninja', width/2, height/2 - 40);
+        textSize(24);
+        text('Press SPACE or Click To Start', width/2, height/2 + 20);
+        return;
+    }
+    if ((kb.presses(' ') || mouse.presses()) && (gameState === 'start')) {
+        gameState = 'play';
+        score = 0;
+        missedFruits = 0;
+        fruitGroup.removeAll();
+        fruitHalves.removeAll();
+        gameStartTime = millis();
+        gameTimer = 0;
+
+    }
+    
     if (frameCount % 120 === 0){
-        spawnFruit();
+    spawnFruit();
     }
     if(frameCount %300===0) {
         spawnBomb();
@@ -61,14 +90,32 @@ function draw(){
             fill(0,0,0,180);
             rect(0,0,width,height);
 
+    
+
             fill("red");
             textSize(70);
             textAlign(CENTER,CENTER);
             text("YOU HIT BOMB",width/2,height/2);
             text("GAMEOVER",width/2,height/2+70);
             noLoop();
+
+        
         }
     }
+    stroke(158,69,69);
+    fill(255);
+    textSize(24);
+    textAlign(LEFT, TOP);
+    text('Score: ' + score, 10, 10);
+    for (let fruit of fruitGroup) {
+        if (fruit.y > height + 50) {
+            fruit.remove();
+            missedFruits += 1;
+        }
+    }
+    text('Missed: ' + missedFruits, 200, 10);
+    gameTimer = floor((millis() - gameStartTime) / 1000);
+    text('Time: ' + (gameDuration - gameTimer), 400, 10);
 }
 
 function spawnFruit(){
@@ -103,6 +150,7 @@ function sliceFruit() {
             const fy = fruit.y; 
             fruit.remove(); 
             splitFruit(fx, fy, fruit.type);
+            score += 1
             break;
         }
     }
