@@ -15,7 +15,8 @@ let gameDuration = 60; // length of one game
 let sliceSound;
 let backgroundTrack;
 
-let difficultyNum
+let difficultyNumFruits = 1;
+let 
 
 
 function preload(){
