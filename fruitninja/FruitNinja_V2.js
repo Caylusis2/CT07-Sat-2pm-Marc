@@ -33,7 +33,7 @@ function preload(){
   // store the fruit objects into an array
   fruitTypes = [peach, watermelon];
 
-  
+  sliceSound = loud
 }
 
 function setup(){
