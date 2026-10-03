@@ -35,7 +35,7 @@ function preload(){
   fruitTypes = [peach, watermelon];
 
   sliceSound = loudSound('assets/fruit-ninja-combo.mp3');
-  backgroundTrack = loudSound('assets/fruit')
+  backgroundTrack = loudSound('assets/fruit-ninja-bgtrack')
 }
 
 function setup(){
