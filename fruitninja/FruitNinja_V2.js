@@ -106,7 +106,7 @@ function draw(){
       }
   }
 
-  if (gameTimer)
+  if (gameTimer - lastDifficultyIncrease)
 
     // Handle slicing when mouse is pressed
   if (mouse.pressing()){
