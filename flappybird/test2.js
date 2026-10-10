@@ -1,9 +1,5 @@
-let birdImg;
+let ss;
 
-function preload(){
-    birdImg = loadImage('assets/redbird-midflap.png');
-}
-    
 function setup(){
     createCanvas(400,600);
     ss = new Sprite(200,300,40,40);
