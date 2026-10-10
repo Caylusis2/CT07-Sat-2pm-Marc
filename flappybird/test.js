@@ -12,6 +12,6 @@ function setup(){
     bird.y = 300;
     bird.width = 20;
     bird.height = 20;
-    bird.image
+    bird.image = midflapping;
 }
 
