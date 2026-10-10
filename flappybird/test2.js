@@ -2,7 +2,11 @@ let birdImg,bg;
 
 function preload(){
     birdImg = loadImage('assets/redbird-midflap.png');
-    bg = loadImage();
+    bg = loadImage('assets/background-night.png');
+}
+    
+function setup(){
+    createCanvas(400,600);
 }
 
 function setup(){
