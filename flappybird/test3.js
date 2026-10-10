@@ -1,1 +1,1 @@
-let arrname = [""]
+let arrname = ["smt", ]
