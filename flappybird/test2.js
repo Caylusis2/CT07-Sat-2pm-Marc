@@ -7,7 +7,7 @@ function preload(){
 function setup(){
     createCanvas(400,600);
     background(220);
-    bird = new Sprite(200,300,30,30,"static");
+    ss = new Sprite(200,300,40,30,"static");
     bird.collider = 'static';
     bird.mass = 2;
     bird.drag = 0.02;
