@@ -9,3 +9,6 @@ function setup(){
     background(225);
 }
 
+function draw(){
+    bird = new Sprite();
+}
