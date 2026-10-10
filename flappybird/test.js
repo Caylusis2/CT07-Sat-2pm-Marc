@@ -1,4 +1,4 @@
-
+let bg;
 
 function preload(){
     bg = loadImage('assets/background-night.png');
