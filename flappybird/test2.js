@@ -6,7 +6,7 @@ function preload(){
     
 function setup(){
     createCanvas(400,600);
-    background(225);
+    background(220);
     bird = new Sprite(200,300,30,30,"static");
     bird.image = birdImg;
     bird.collider = 'dynamic';
