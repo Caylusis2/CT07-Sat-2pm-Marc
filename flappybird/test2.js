@@ -3,7 +3,6 @@ let ss;
 function setup(){
     new Canvas(400,600);
     ss = new Sprite(200,300,40,40);
-    bird.collider = 'static';
     world.gravity.y = 10;
 }
 
