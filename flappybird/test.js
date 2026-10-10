@@ -9,5 +9,6 @@ function setup(){
     bird = new Sprite(200,300,30,30,"static");
     bird.image = birdImg;
 }
-function draw()
-
+function draw(){
+    image(bg,0,0,width,height);
+}
