@@ -1,4 +1,4 @@
-let bird,bg;
+let bird,bg,birdImg;
 
 function preload(){
     bg = loadImage('assets/background-night.png');
