@@ -1,1 +1,1 @@
-let arrname = ["smt", "smt2", "smt3"]
+let arrname = ["smt", "smt2", "smt3"];
