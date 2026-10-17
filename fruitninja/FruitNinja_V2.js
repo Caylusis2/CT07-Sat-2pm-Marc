@@ -72,7 +72,7 @@ function draw(){
     gameState = 'gameover';
     return;
   }
-    }
+}
 
   // Start screen
   if (gameState === 'start') {
