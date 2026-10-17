@@ -68,7 +68,7 @@ function draw(){
   if(!backgroundTrack.isPlaying()){
     backgroundTrack.loop();
 
-    
+  if (gameTimer >= gameDuration) {}
     }
 
   // Start screen
