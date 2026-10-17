@@ -68,7 +68,10 @@ function draw(){
   if(!backgroundTrack.isPlaying()){
     backgroundTrack.loop();
 
-  if (gameTimer >= gameDuration) {}
+  if (gameTimer >= gameDuration) {
+    gameState = 'gameover';
+    return;
+  }
     }
 
   // Start screen
