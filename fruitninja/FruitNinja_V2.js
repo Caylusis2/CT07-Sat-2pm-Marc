@@ -67,6 +67,8 @@ function draw(){
   }
   if(!backgroundTrack.isPlaying()){
     backgroundTrack.loop();
+
+    
     }
 
   // Start screen
