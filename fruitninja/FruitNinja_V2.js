@@ -132,8 +132,8 @@ function draw() {
   text('Missed: ' + missedFruits, 200, 10);
   text('Time: ' + (gameDuration - gameTimer), 400, 10);
 
+  fill
   text('Lives: ' + lives, 550, 10);
-  
 }
 
 
