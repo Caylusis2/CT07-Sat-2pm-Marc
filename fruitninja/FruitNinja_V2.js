@@ -119,7 +119,8 @@ function draw() {
     if (fruit.y > height + 50) {
       fruit.remove();
       missedFruits++;
-      Lives 
+      Lives--;
+      Lives = 
     }
   }
 
