@@ -48,9 +48,11 @@ function preload() {
   };
 
   let berry = {};
-  let melon = {}
+  let melon = {};
+  let grape = {};
 
-  fruitTypes = [peach, watermelon, timefruit];
+
+  fruitTypes = [peach, watermelon, timefruit, berry];
 
   // Requires p5.sound
   sliceSound = loadSound('assets/fruit-ninja-combo.mp3');
