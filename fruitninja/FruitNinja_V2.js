@@ -47,7 +47,9 @@ function preload() {
     isTimeFruit: true
   };
 
-  let berry = {};
+  let berry = {
+    whole: loadImage
+  };
   let melon = {};
   let grape = {};
 
