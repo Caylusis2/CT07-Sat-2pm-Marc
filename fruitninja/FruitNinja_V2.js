@@ -151,6 +151,7 @@ function startGame() {
 
   score = 0;
   missedFruits = 0;
+  lives = 3;
 
   fruitGroup.removeAll();
   fruitHalves.removeAll();
