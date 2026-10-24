@@ -1,16 +1,16 @@
-let dojoBG; // image for the background
+let dojoBG;
 
-let fruitGroup; // Group for whole fruits
-let fruitHalves; // Group for fruit halves
-let fruitTypes = []; // store fruit image objects
-let score = 0; // player's score
-let missedFruits = 0; // count of uncut fruits that fall
+let fruitGroup;
+let fruitHalves;
+let fruitTypes = [];
 
+let score = 0;
+let missedFruits = 0;
 
-let gameState = 'start'; // 'start', 'play', 'gameover' - controls game screen
-let gameStartTime = 0; // ms when play starts
-let gameTimer = 0; // seconds elapsed
-let gameDuration = 60; // length of one game
+let gameState = 'start'; // 'start', 'play', 'gameover'
+let gameStartTime = 0;
+let gameTimer = 0;
+let gameDuration = 60;
 
 let sliceSound;
 let backgroundTrack;
@@ -19,192 +19,279 @@ let difficultyNumFruits = 1;
 let lastDifficultyIncrease = 0;
 
 
-function preload(){
-  dojoBG =loadImage('assets/dojobackground.png');
+function preload() {
+  dojoBG = loadImage('assets/dojobackground.png');
 
-  // declare the peach object
+  // Peach
   let peach = {
     whole: loadImage('assets/peachwhole.png'),
-    half1: loadImage('assets/peachhalf.png'),
+    half1: loadImage('assets/peachhalf.png')
   };
 
-  // declare the watermelon object
+  // Watermelon
   let watermelon = {
     whole: loadImage('assets/watermelonwhole.png'),
-    half1: loadImage('assets/watermelonhalf.png'),
-  }
+    half1: loadImage('assets/watermelonhalf.png')
+  };
 
-  // store the fruit objects into an array
   fruitTypes = [peach, watermelon];
 
-  sliceSound = loudSound('assets/fruit-ninja-combo.mp3');
-  backgroundTrack = loudSound('assets/fruit-ninja-bgtrack.mp3');
+  // Requires p5.sound, if using standard p5.js
+  sliceSound = loadSound('assets/fruit-ninja-combo.mp3');
+  backgroundTrack = loadSound('assets/fruit-ninja-bgtrack.mp3');
 }
 
-function setup(){
-  new Canvas(800,600);
+
+function setup() {
+  new Canvas(800, 600);
+
   world.gravity.y = 10;
 
-  fruitGroup = new Group(); // new group for fruits
-  fruitHalves = new Group(); // group for fruit halves
+  fruitGroup = new Group();
+  fruitHalves = new Group();
 }
 
-function draw(){
-  clear(); // optional to clear before applying an image.
+
+function draw() {
+  clear();
   image(dojoBG, 0, 0, width, height);
 
-  
-  // Place this at the start of your draw() function
-  if ((kb.presses(' ') || mouse.presses()) && (gameState === 'start')) {
-    gameState = 'play';
-    score = 0;
-    missedFruits = 0;
-    fruitGroup.removeAll();
-    fruitHalves.removeAll();
-    gameStartTime = millis(); // capture time started
-    gameTimer = 0;  // timer counter
-    difficultyNumFruits = 1;
-  }
-  if(!backgroundTrack.isPlaying()){
-    backgroundTrack.loop();
-
-  if (gameTimer >= gameDuration) {
-    gameState = 'gameover';
-    return;
-  }
-}
-
-  // Start screen
+  // START SCREEN
   if (gameState === 'start') {
-    fill(0, 180);
-    rect(0, 0, width, height);
-    fill(255);
-    textAlign(CENTER, CENTER);
-    textSize(48);
-    text('Fruit Ninja', width / 2, height / 2 - 40);
-    textSize(24);
-    text('Press SPACE or Click to Start', width / 2, height / 2 + 20);
-    backgroundTrack.stop();
-    return; // do not process rest of this function
-  }
-
-  if (gameState === 'gameover') {
-    fill(0, 180);
-    rect(0, 0, width, height);
-    fill(255,0,0);
-    textAlign(CENTER, CENTER);
-    textSize(48);
-    text('Game Over!', width / 2, height / 2 - 60);
-    textSize(24);
-    fill(255);
-    text('Score: ' + score, width / 2, height / 2);
-    text('Missed Fruits: ' + missedFruits, width / 2, height / 2 + 40);
-    text('Press SPACE or Click to Restart', width / 2, height / 2 + 80);
-    backgroundTrack.stop();
-    return;
-  }
-
-  // call spawnFruit function 
-  if (frameCount % 120 === 0){
-      for(let i = 0; i<difficultyNumFruits; i++){
-        spawnFruit();
-      }
-  }
-
-  if (gameTimer - lastDifficultyIncrease >= 15){
-    difficultyNumFruits +=1;
-    lastDifficultyIncrease= gameTimer;
-  }
-
-    // Handle slicing when mouse is pressed
-  if (mouse.pressing()){
-    trail = new Sprite(mouse.x, mouse.y, 7);
-    trail.collider = 'none';
-    trail.color = "red";
-    trail.life = 10;
-    sliceFruit();
-  }
-
-    // Remove fruits that fall below the screen, count as missed
-  for (let fruit of fruitGroup) {
-    if (fruit.y > height + 50) {
-      fruit.remove();
-      missedFruits += 1;
+    if (kb.presses(' ') || mouse.presses()) {
+      startGame();
+    } else {
+      drawStartScreen();
+      return;
     }
   }
 
-  gameTimer = floor((millis() - gameStartTime) / 1000);
-  if (gameTimer >= gameDuration) {
-    gameState = 'gameover';
-    backgroundTrack.stop();
+  // GAME OVER SCREEN
+  if (gameState === 'gameover') {
+    drawGameOverScreen();
     return;
   }
 
-  // Display: Score, Missed, Timer
-  stroke(158, 69, 69); // rgb colour
+  // UPDATE TIMER
+  gameTimer = floor((millis() - gameStartTime) / 1000);
+
+  if (gameTimer >= gameDuration) {
+    gameState = 'gameover';
+
+    if (backgroundTrack && backgroundTrack.isPlaying()) {
+      backgroundTrack.stop();
+    }
+
+    return;
+  }
+
+  // PLAY BACKGROUND MUSIC
+  if (backgroundTrack && !backgroundTrack.isPlaying()) {
+    backgroundTrack.loop();
+  }
+
+  // SPAWN FRUITS
+  if (frameCount % 120 === 0) {
+    for (let i = 0; i < difficultyNumFruits; i++) {
+      spawnFruit();
+    }
+  }
+
+  // INCREASE DIFFICULTY EVERY 15 SECONDS
+  if (gameTimer - lastDifficultyIncrease >= 15) {
+    difficultyNumFruits++;
+    lastDifficultyIncrease = gameTimer;
+  }
+
+  // SLICE FRUITS WHILE MOUSE IS PRESSED
+  if (mouse.pressing()) {
+    let trail = new Sprite(mouse.x, mouse.y, 7);
+
+    trail.collider = 'none';
+    trail.color = 'red';
+    trail.life = 10;
+
+    sliceFruit();
+  }
+
+  // COUNT FRUITS THAT FALL OFF SCREEN
+  for (let fruit of fruitGroup) {
+    if (fruit.y > height + 50) {
+      fruit.remove();
+      missedFruits++;
+    }
+  }
+
+  // DISPLAY SCORE, MISSED FRUITS AND TIMER
+  stroke(158, 69, 69);
   fill(255);
   textSize(24);
   textAlign(LEFT, TOP);
+
   text('Score: ' + score, 10, 10);
   text('Missed: ' + missedFruits, 200, 10);
   text('Time: ' + (gameDuration - gameTimer), 400, 10);
 }
 
-function spawnFruit(){
-  let fruitData = random(fruitTypes); // pick one at random
-  let randomX = random(300, 500); // random X to spawn
-  let fruit = new fruitGroup.Sprite(randomX, height+20, 40); // spawn at bottom
-  fruit.image = fruitData.whole;
-  fruit.type = fruitData; // store reference to its type
-  fruit.vel.y = random(-10, -14); // shoot upward at random velocity
-  fruit.vel.x = random(-2, 2); // sideways curve
-  fruit.friction = 0; // no friction
+
+// START A NEW GAME
+function startGame() {
+  gameState = 'play';
+
+  score = 0;
+  missedFruits = 0;
+
+  fruitGroup.removeAll();
+  fruitHalves.removeAll();
+
+  gameStartTime = millis();
+  gameTimer = 0;
+
+  difficultyNumFruits = 1;
+  lastDifficultyIncrease = 0;
+
+  if (backgroundTrack && !backgroundTrack.isPlaying()) {
+    backgroundTrack.loop();
+  }
 }
 
 
-// Check if any fruit is sliced by the mouse
+// DRAW START SCREEN
+function drawStartScreen() {
+  fill(0, 180);
+  rect(0, 0, width, height);
+
+  fill(255);
+  textAlign(CENTER, CENTER);
+
+  textSize(48);
+  text('Fruit Ninja', width / 2, height / 2 - 40);
+
+  textSize(24);
+  text(
+    'Press SPACE or Click to Start',
+    width / 2,
+    height / 2 + 20
+  );
+}
+
+
+// DRAW GAME OVER SCREEN
+function drawGameOverScreen() {
+  fill(0, 180);
+  rect(0, 0, width, height);
+
+  fill(255, 0, 0);
+  textAlign(CENTER, CENTER);
+  textSize(48);
+
+  text('Game Over!', width / 2, height / 2 - 60);
+
+  fill(255);
+  textSize(24);
+
+  text('Score: ' + score, width / 2, height / 2);
+  text(
+    'Missed Fruits: ' + missedFruits,
+    width / 2,
+    height / 2 + 40
+  );
+
+  text(
+    'Press SPACE or Click to Restart',
+    width / 2,
+    height / 2 + 80
+  );
+}
+
+
+// SPAWN A RANDOM FRUIT
+function spawnFruit() {
+  let fruitData = random(fruitTypes);
+  let randomX = random(300, 500);
+
+  let fruit = new fruitGroup.Sprite(
+    randomX,
+    height + 20,
+    40
+  );
+
+  fruit.image = fruitData.whole;
+  fruit.type = fruitData;
+
+  fruit.vel.y = random(-14, -10);
+  fruit.vel.x = random(-2, 2);
+
+  fruit.friction = 0;
+}
+
+
+// CHECK WHETHER A FRUIT IS SLICED
 function sliceFruit() {
-  // if (!mouse.pressing()) return;
   for (let fruit of fruitGroup) {
-    if (fruit.sliced){
-      continue; // skip already sliced fruits
-    } 
+    if (fruit.sliced) {
+      continue;
+    }
 
-    // calculate distance between mouse and fruit
-    let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
+    let d = dist(
+      mouse.x,
+      mouse.y,
+      fruit.x,
+      fruit.y
+    );
 
-    if (d < ((fruit.d / 2) + 5)) {
-      fruit.sliced = true; // prevent repeat slicing
+    if (d < (fruit.d / 2) + 5) {
+      fruit.sliced = true;
 
       const fx = fruit.x;
       const fy = fruit.y;
+      const fruitData = fruit.type;
 
-      fruit.remove(); // remove whole fruit
-      // sliceSound.play();
+      fruit.remove();
 
-      splitFruit(fx, fy, fruit.type); // spawn halves
-      score += 1 // increase score by 1
-      
-      break; // only slice one fruit per frame
+      // Play slicing sound
+      if (sliceSound && !sliceSound.isPlaying()) {
+        sliceSound.play();
+      }
+
+      splitFruit(fx, fy, fruitData);
+
+      score += 1;
+
+      // Slice only one fruit per frame
+      break;
     }
   }
 }
 
-// Split a fruit into two halves and animate them
+
+// SPLIT A FRUIT INTO TWO HALVES
 function splitFruit(x, y, fruitData) {
-  // Create left half
-  let left = new fruitHalves.Sprite(x - 10, y, 40, 40);
-  left.img = fruitData.half1;
-  left.vel.x = -3; // veer left
+  // LEFT HALF
+  let left = new fruitHalves.Sprite(
+    x - 10,
+    y,
+    40,
+    40
+  );
+
+  left.image = fruitData.half1;
+  left.vel.x = -3;
   left.vel.y = random(-5, -2);
   left.rotationSpeed = -5;
-  left.life = 30; // remove after 30 frames
+  left.life = 30;
 
-  // Create right half
-  let right = new fruitHalves.Sprite(x + 10, y, 40, 40);
-  right.img = fruitData.half1;
-  right.vel.x = 3; // veer right
+  // RIGHT HALF
+  let right = new fruitHalves.Sprite(
+    x + 10,
+    y,
+    40,
+    40
+  );
+
+  right.image = fruitData.half1;
+  right.vel.x = 3;
   right.vel.y = random(-5, -2);
   right.rotationSpeed = 5;
-  right.life = 30; // remove after 30 frames
+  right.life = 30;
 }
