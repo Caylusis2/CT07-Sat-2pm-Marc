@@ -126,7 +126,7 @@ function draw() {
 
   // live reach 0 what happens
   if (lives <=  0){
-    gamestate = 'gameover';
+    gameState = 'gameover';
     return;
   }
 
