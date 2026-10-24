@@ -3,7 +3,7 @@ let dojoBG;
 let fruitGroup;
 let fruitHalves;
 let fruitTypes = [];
-
+let lives = 3;
 let score = 0;
 let missedFruits = 0;
 
