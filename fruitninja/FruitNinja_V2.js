@@ -65,7 +65,7 @@ function draw() {
       return;
     }
   }
-  if((kb.presses(' ')|| mouse.presses()) && (gameState ==='start')){
+  if((kb.presses(' ')|| mouse.presses()) && (gameState ==='play')){
     gameState = 'play';
     score = 0;
     missedFruits = 0;
