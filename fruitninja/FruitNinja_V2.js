@@ -35,7 +35,11 @@ function preload() {
     half1: loadImage('assets/watermelonhalf.png')
   };
 
-  fruitTypes = [peach, watermelon];
+  let timefruit = {
+    whole: loadImage('assets/clock.png'),
+  };
+
+  fruitTypes = [peach, watermelon, timefruit];
 
   // Requires p5.sound
   sliceSound = loadSound('assets/fruit-ninja-combo.mp3');
@@ -280,7 +284,9 @@ function sliceFruit() {
       const fruitData = fruit.type;
 
       fruit.remove();
-
+      if(fruitData === 'timefruit'){
+        gameTimer -=2;
+      }
       // PLAY SLICING SOUND
       if (sliceSound && !sliceSound.isPlaying()) {
         sliceSound.play();
