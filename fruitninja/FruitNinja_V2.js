@@ -133,7 +133,7 @@ function draw() {
   text('Time: ' + (gameDuration - gameTimer), 400, 10);
 
   fill("green");
-  text('Lives: ' + lives, 560, 10);
+  text('Lives: ' + lives, 570, 10);
 }
 
 
