@@ -126,7 +126,8 @@ function draw() {
 
   // live reach 0 what happens
   if (lives <=  0){
-    gamestate = 'gameover'
+    gamestate = 'gameover';
+    return
   }
 
   // DISPLAY SCORE, MISSED FRUITS AND TIMER
