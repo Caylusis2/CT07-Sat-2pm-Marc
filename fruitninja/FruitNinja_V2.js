@@ -120,7 +120,7 @@ function draw() {
       fruit.remove();
       missedFruits++;
       Lives--;
-      Lives = Lives - 1;
+      
     }
   }
 
