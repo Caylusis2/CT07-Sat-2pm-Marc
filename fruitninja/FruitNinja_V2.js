@@ -271,7 +271,7 @@ function drawGameOverScreen() {
   text(
     'Press SPACE or Click to Restart',
     width / 2,
-    height / 2 + 80
+    height / 2 + 160
   );
 }
 
