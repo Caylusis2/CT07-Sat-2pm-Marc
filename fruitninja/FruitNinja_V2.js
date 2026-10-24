@@ -60,7 +60,7 @@ function preload() {
   };
 
   let grape = {
-    whole
+    whole: loadImage('assets')
   };
 
 
