@@ -3,6 +3,7 @@ let dojoBG;
 let fruitGroup;
 let fruitHalves;
 let fruitTypes = [];
+
 let lives = 3;
 let score = 0;
 let missedFruits = 0;
@@ -36,7 +37,7 @@ function preload() {
 
   fruitTypes = [peach, watermelon];
 
-  // Requires p5.sound, if using standard p5.js
+  // Requires p5.sound
   sliceSound = loadSound('assets/fruit-ninja-combo.mp3');
   backgroundTrack = loadSound('assets/fruit-ninja-bgtrack.mp3');
 }
@@ -65,29 +66,25 @@ function draw() {
       return;
     }
   }
-  if((kb.presses(' ')|| mouse.presses()) && (gameState ==='play')){
-    gameState = 'play';
-    score = 0;
-    missedFruits = 0;
-    fruitGroup.removeAll();
-    fruitHalves.removeAll();
-  }
-  // GAME OVER SCREEN
+
+  // RESTART AFTER GAME OVER
   if (gameState === 'gameover') {
-    drawGameOverScreen();
-    return;
+    if (kb.presses(' ') || mouse.presses()) {
+      startGame();
+    } else {
+      drawGameOverScreen();
+      return;
+    }
   }
 
   // UPDATE TIMER
   gameTimer = floor((millis() - gameStartTime) / 1000);
-
+   
+  // END GAME WHEN TIME RUNS OUT
   if (gameTimer >= gameDuration) {
-    gameState = 'gameover';
-
-    if (backgroundTrack && backgroundTrack.isPlaying()) {
-      backgroundTrack.stop();
-    }
-
+    gameTimer = gameDuration;
+    endGame();
+    drawGameOverScreen();
     return;
   }
 
@@ -126,17 +123,17 @@ function draw() {
       fruit.remove();
       missedFruits++;
       lives--;
-      
     }
   }
 
-  // live reach 0 what happens
-  if (lives <=  0){
-    gameState = 'gameover';
+  // GAME OVER WHEN NO LIVES REMAIN
+  if (lives <= 0) {
+    endGame();
+    drawGameOverScreen();
     return;
   }
 
-  // DISPLAY SCORE, MISSED FRUITS AND TIMER
+  // DISPLAY SCORE, MISSED FRUITS, TIMER AND LIVES
   stroke(158, 69, 69);
   fill(255);
   textSize(24);
@@ -146,30 +143,46 @@ function draw() {
   text('Missed: ' + missedFruits, 200, 10);
   text('Time: ' + (gameDuration - gameTimer), 400, 10);
 
-  fill("green");
+  fill('green');
   text('Lives: ' + lives, 570, 10);
 }
 
 
-// START A NEW GAME
+// START OR RESTART A NEW GAME
 function startGame() {
+  // Reset game state
   gameState = 'play';
 
+  // Reset score and lives
   score = 0;
   missedFruits = 0;
   lives = 3;
 
-  fruitGroup.removeAll();
-  fruitHalves.removeAll();
-
-  gameStartTime = millis();
+  // RESET TIMER
   gameTimer = 0;
+  gameStartTime = millis();
 
+  // RESET DIFFICULTY
   difficultyNumFruits = 1;
   lastDifficultyIncrease = 0;
 
+  // REMOVE OLD FRUITS
+  fruitGroup.removeAll();
+  fruitHalves.removeAll();
+
+  // RESTART BACKGROUND MUSIC
   if (backgroundTrack && !backgroundTrack.isPlaying()) {
     backgroundTrack.loop();
+  }
+}
+
+
+// END THE GAME
+function endGame() {
+  gameState = 'gameover';
+
+  if (backgroundTrack && backgroundTrack.isPlaying()) {
+    backgroundTrack.stop();
   }
 }
 
@@ -209,6 +222,7 @@ function drawGameOverScreen() {
   textSize(24);
 
   text('Score: ' + score, width / 2, height / 2);
+
   text(
     'Missed Fruits: ' + missedFruits,
     width / 2,
@@ -267,7 +281,7 @@ function sliceFruit() {
 
       fruit.remove();
 
-      // Play slicing sound
+      // PLAY SLICING SOUND
       if (sliceSound && !sliceSound.isPlaying()) {
         sliceSound.play();
       }
