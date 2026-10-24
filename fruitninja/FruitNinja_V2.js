@@ -48,7 +48,7 @@ function preload() {
   };
 
   let berry = {};
-  
+  let melon = {}
 
   fruitTypes = [peach, watermelon, timefruit];
 
