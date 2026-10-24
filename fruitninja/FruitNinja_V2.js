@@ -48,7 +48,8 @@ function preload() {
   };
 
   let berry = {
-    whole: loadImage('assets/fruitninja_berry.png')
+    whole: loadImage('assets/fruitninja_berry.png'),
+    half1
   };
   let melon = {};
   let grape = {};
