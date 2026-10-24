@@ -47,7 +47,7 @@ function preload() {
     isTimeFruit: true
   };
 
-  let berr
+  let berry = {}
 
   fruitTypes = [peach, watermelon, timefruit];
 
