@@ -36,7 +36,7 @@ function preload() {
   };
 
   let timefruit = {
-    whole: loadImage('assets/clock.png'),
+    whole: loadImage('assets/fruitninja_clock.png'),
   };
 
   fruitTypes = [peach, watermelon, timefruit];
