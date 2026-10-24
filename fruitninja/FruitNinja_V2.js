@@ -298,7 +298,7 @@ function sliceFruit() {
 
       // ADD 2 SECONDS WHEN SLICING A TIME FRUIT
       if (fruitData.isTimeFruit) {
-        timeBonus += 2;
+        timeBonus += 5;
       }
 
       // PLAY SLICING SOUND
