@@ -47,6 +47,8 @@ function preload() {
     isTimeFruit: true
   };
 
+  let berr
+
   fruitTypes = [peach, watermelon, timefruit];
 
   // Requires p5.sound
