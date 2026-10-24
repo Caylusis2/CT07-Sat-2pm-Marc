@@ -13,7 +13,7 @@ let gameState = 'start'; // 'start', 'play', 'gameover'
 let gameStartTime = 0;
 let gameTimer = 0;
 let gameDuration = 60;
-let finalFruitScore = 0;
+let finalFruitScore ;
 let finalMissFruit;
 let FinalScore;
 
