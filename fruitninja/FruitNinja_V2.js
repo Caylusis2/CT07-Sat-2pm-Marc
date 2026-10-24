@@ -60,7 +60,7 @@ function preload() {
   };
 
   let grape = {
-    whole: loadImage('assets')
+    whole: loadImage('assets/fruitninja_grape.png')
   };
 
 
