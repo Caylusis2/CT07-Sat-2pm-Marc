@@ -13,6 +13,7 @@ let gameState = 'start'; // 'start', 'play', 'gameover'
 let gameStartTime = 0;
 let gameTimer = 0;
 let gameDuration = 60;
+let finalFruitScore 
 
 // NEW: Bonus time gained from slicing time fruits
 let timeBonus = 0;
