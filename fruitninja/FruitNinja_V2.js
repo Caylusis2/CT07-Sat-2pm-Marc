@@ -133,6 +133,7 @@ function draw() {
   text('Time: ' + (gameDuration - gameTimer), 400, 10);
 
   text('Lives: ' + lives, 550, 10);
+  
 }
 
 
