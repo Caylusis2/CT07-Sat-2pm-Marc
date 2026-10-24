@@ -262,11 +262,11 @@ function drawGameOverScreen() {
   text('Score: ' + finalFruitScore, width / 2, height / 2);
   finalMissFruit = missedFruits *50;
   text(
-    'Missed Fruits: ' + missedFruits,
+    'Missed Fruits: ' + finalMissFruit,
     width / 2,
     height / 2 + 40
   );
-
+  text()
   text(
     'Press SPACE or Click to Restart',
     width / 2,
