@@ -1,3 +1,4 @@
+
 let dojoBG;
 
 let fruitGroup;
@@ -12,6 +13,9 @@ let gameState = 'start'; // 'start', 'play', 'gameover'
 let gameStartTime = 0;
 let gameTimer = 0;
 let gameDuration = 60;
+
+// NEW: Bonus time gained from slicing time fruits
+let timeBonus = 0;
 
 let sliceSound;
 let backgroundTrack;
@@ -35,8 +39,11 @@ function preload() {
     half1: loadImage('assets/watermelonhalf.png')
   };
 
+  // Time fruit
   let timefruit = {
     whole: loadImage('assets/fruitninja_clock.png'),
+    half1: loadImage('assets/fruitninja_clock.png'),
+    isTimeFruit: true
   };
 
   fruitTypes = [peach, watermelon, timefruit];
@@ -83,10 +90,10 @@ function draw() {
 
   // UPDATE TIMER
   gameTimer = floor((millis() - gameStartTime) / 1000);
-   
+
   // END GAME WHEN TIME RUNS OUT
-  if (gameTimer >= gameDuration) {
-    gameTimer = gameDuration;
+  if (gameTimer >= gameDuration + timeBonus) {
+    gameTimer = gameDuration + timeBonus;
     endGame();
     drawGameOverScreen();
     return;
@@ -145,7 +152,10 @@ function draw() {
 
   text('Score: ' + score, 10, 10);
   text('Missed: ' + missedFruits, 200, 10);
-  text('Time: ' + (gameDuration - gameTimer), 400, 10);
+
+  // DISPLAY REMAINING TIME INCLUDING BONUS
+  let timeLeft = max(0, gameDuration + timeBonus - gameTimer);
+  text('Time: ' + timeLeft, 400, 10);
 
   fill('green');
   text('Lives: ' + lives, 570, 10);
@@ -165,6 +175,7 @@ function startGame() {
   // RESET TIMER
   gameTimer = 0;
   gameStartTime = millis();
+  timeBonus = 0;
 
   // RESET DIFFICULTY
   difficultyNumFruits = 1;
@@ -284,14 +295,18 @@ function sliceFruit() {
       const fruitData = fruit.type;
 
       fruit.remove();
-      if(fruitData === 'timefruit'){
-        gameTimer -=2;
+
+      // ADD 2 SECONDS WHEN SLICING A TIME FRUIT
+      if (fruitData.isTimeFruit) {
+        timeBonus += 2;
       }
+
       // PLAY SLICING SOUND
       if (sliceSound && !sliceSound.isPlaying()) {
         sliceSound.play();
       }
 
+      // SPLIT THE FRUIT
       splitFruit(fx, fy, fruitData);
 
       score += 1;
