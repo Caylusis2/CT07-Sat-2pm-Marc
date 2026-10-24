@@ -65,7 +65,13 @@ function draw() {
       return;
     }
   }
-
+  if((kb.presses(' ')|| mouse.presses()) && (gameState ==='start')){
+    gameState = 'play';
+    score = 0;
+    missedFruits = 0;
+    fruitGroup.removeAll();
+    fruitHalves.removeAll();
+  }
   // GAME OVER SCREEN
   if (gameState === 'gameover') {
     drawGameOverScreen();
