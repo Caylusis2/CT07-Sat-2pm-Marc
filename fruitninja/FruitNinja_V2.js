@@ -258,8 +258,8 @@ function drawGameOverScreen() {
 
   fill(255);
   textSize(24);
-  finalFruitScore = 
-  text('Score: ' + score, width / 2, height / 2);
+  finalFruitScore = score * 100;
+  text('Score: ' + fruit, width / 2, height / 2);
 
   text(
     'Missed Fruits: ' + missedFruits,
