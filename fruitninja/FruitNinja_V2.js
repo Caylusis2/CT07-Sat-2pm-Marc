@@ -125,7 +125,7 @@ function draw() {
   }
 
   // live reach 0 what happens
-  if (lives = 0)
+  if (lives ===  0)
 
   // DISPLAY SCORE, MISSED FRUITS AND TIMER
   stroke(158, 69, 69);
