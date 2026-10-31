@@ -43,10 +43,11 @@ const COLORS = [
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
   textFont("Trebuchet MS");
   angleMode(RADIANS);
 
-  // p5play physics configuration
+  // Disable gravity for top-down gameplay
   world.gravity.y = 0;
 
   updateButtons();
